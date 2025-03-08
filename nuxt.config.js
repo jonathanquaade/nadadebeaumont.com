@@ -1,5 +1,5 @@
 export default {
-  mode: 'universal',
+  target: 'server',
 
   /*
   ** Headers of the page
@@ -73,5 +73,11 @@ export default {
 
   generate: {
     fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
+  },
+
+  // Add server configuration for Vercel
+  server: {
+    port: process.env.PORT || 3000,
+    host: '0.0.0.0'
   }
 }
